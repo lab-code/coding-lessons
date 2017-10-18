@@ -1,1 +1,21 @@
-site_name: My Docs
+site_name: Coding lessons
+site_description: Layouts for lessons taught at research coding sesssions
+site_author: 'hejtmy'
+site_url: 'https://lab-code.github.io'
+theme: material
+repo_name: 'lab-code/coding-lessons'
+repo_url: 'https://github.com/lab-code/coding-lessons'
+
+extra:
+  palette:
+    primary: 'light green'
+    accent: 'cyan'
+
+markdown_extensions:
+  - admonition
+  - codehilite
+
+pages:
+  - index.md
+  - Git Versioning:
+    - "Fundamentals" : "git/fundamentals.md"
