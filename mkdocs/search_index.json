@@ -1,0 +1,169 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Lessons files\n\n\nNothing atm.",
+            "title": "Home"
+        },
+        {
+            "location": "/#lessons-files",
+            "text": "Nothing atm.",
+            "title": "Lessons files"
+        },
+        {
+            "location": "/git/fundamentals/",
+            "text": "What is git\n\n\nGit is the origin of google docs :) GIt is like game save with bunch of functionality aded on top.\n\n\ngit is a distributed version control system. Git keeps track of all the files and changes to those files. \n\n\nUnlike other VCSs, git saves snapshots of history. Every time you make change to ANY file under git control, it knows about it. \n\n\nGit is not running, it doesn\u00a8t drain resources. It only \"runs\" when you ask it to.\n\n\nGit != github\n\n\nGit is local - distributed. You can work on projeccts completely offline. It has its benefits and isadvantages, but for small teams, mostly benefits.\n\n\nWhen to use it?\n\n\nGit works flawlessly with text based files, but cannot work (without serious tweaking) with binary files.\n\n\n\n\nExample\n\n\nShow an example what is the difference between text and png file\n\n\n\n\nGit is designed to work as a repository for files you need to keep track of and you are developing constantly. It should NOT be used as a repository for your data files.\n\n\n\n\nQuestion\n\n\nWhich of these files should be sourced and which not?\n\n\n\n\n*.jpg\n\n\n*.md\n\n\n*.R\n\n\n*.csv\n\n\n*.edf\n\n\n\n\n\n\nTerminology\n\n\nGit != github.\n\n\nRepository\n\n\nOr repo for short.\n\n\nStaging and commiting\n\n\nProcess of adding files under version control. Staging prepares them for the commit, commiting adds them permantenly to the branch you are working on.\n\n\n\n\nStagin and commiting are separated becasue of practical reasons. You might need to stage multiple files before you want to commit to the commit.\n\n\nBranch\n\n\nPath of your project with the linear history. Points to the latest commit in a particular \"branch\". \n\n\nDefault branch is master. \n\n\nCommon names can be \ndevelop\n, \naddingEEGLAB\n etc.\n\n\nRemote\n\n\nOnline repositoryy that keeps the .git folder with entire project in it.\n\n\nGit software\n\n\nGit has several \"clickable\" GUIs. \n\n\n\n\nGitkraken\n\n\nSourceTree\n\n\n\n\nProblems with git gui:\n\n\n\n\nunreliable from time to time\n\n\nthey don't always implement all the features (gitkraken implemented LFS in September 2017 and it is still in beta)\n\n\nthey don't teach you anything - in the beginnign you are missing on the underlying logic\n\n\nMAJOR\n: All internet help will be cmd based. CMD commands are universal, GUIs are not\n\n\n\n\nFirst repository\n\n\n\n\nDemo\n\n\nBefore starting create a github repository for this lesson to showcase how it works and to be able to clone it back to pc. Set remotes. You will explain it later.\n\n\n\n\nInitialisation\n\n\nWhat is in the folder. What are we looking at?\n\n\ngit init\n\n\n\n\nDemo\n\n\nRun \ngit init\n and take a look at the folder. Make sure people can see hidden files.\n\n\n\n\nWriting first file\n\n\nGit files exist in several states:\n\n\n\n\nuntracked\n\n\ntracked and unmodified\n\n\ntracked and modified\n\n\n\n\n\nTracked modified files can be in two states: staged or unstaged.\n\n\nlet's make some changes and then see how it looks.\n\n\ngit add\n\n\n    touch README.md\n    touch main.R\n    vim README.md\n    git add README.md\n\n\n\n\n\nGit add has several shorthands to add all files you have changed.\n\n\n    git add .\n    git add --all\n\n\n\n\n\n\n\nDemo\n\n\nCreate README.md and main.R file. Add README to the stagin area.\n\n\n\n\nnow let's learn a seccond command\n\n\ngit status\n\n\nWhat happens if you add and then change again file before commit?\n\n\ngit status\ngit status -s\n\n\n\n\n\n\n\nDemo\n\n\nAfter staging README.md, make some modifications and then run git status again. What is weird. Explain what is going on with the readme. How can it be staged and modified??\n\n\n\n\ngit diff\n\n\nGit diff allows to compare what changed in what file in history\n\n\nDifferent types of diffs\n\n\ngit diff #diffs all the files that are tracked\ngit diff path/to/file.R #diffs changes in that particular file\ngit diff 243a6 #diffs changes vs particular commit in history   \ngit diff path/to/file.R 24b3a6 #diffs changes of a file vs particular commit/branch\n\n\n\n\n\ngit reset\n\n\nGit reset allows removing files from staged area. It doens't modify nor change the file, it only unstages it.\n\n\ngit reset Main.\n\n\n\n\n\ngit commit\n\n\nWhen satisfied, you can commit those files you have to the repository. Each commit needs to have an author and message.\n\n\nYou might be asked to set user.email and user.name. Keep them same to your github/bitbucket accounts if you want the commits to be Yours.\n\n\ngit config --global user.email \"your@email.com\ngit config --global user.name \"yourname\"\n\n\n\n\n\nWhen you are defined as a user, you can commit files.\n\n\ngit commit\n\n\n\n\n\nShorthand for commit with a message is\n\n\ngit commit -m \"Initial commit\"\n\n\n\n\n\n\n\nPractice\n\n\nNow make simple modifications to main.R to load bob ross paintings from \nhere\n into variable called \ndf_bob\n. \n\n\nCheck status of your branch. Stage the file and commit it with some message. Do this several times. Always add and commit only one or two lines of code.\n\n\n\n\ngit log\n\n\nAfter you have done these two commits, we can look at how our history looks \n\n\ngit log\ngit log -2\ngit log ---graph\ngit log -p -1\ngit log --pretty=online\n\n\n\n\n\nChanging files (and our mind)\n\n\nNow we have few files, we can get into the core of git. but first, screw up our perfect bob ross loading\n\n\n\n\nPractice\n\n\nMake a purposeful mistake in the bob ross file so that it now doesn't load anything. DO NOT COMMIT!\n\n\nUse git diff to see what exactly is now different. Stage the file.\n\n\n\n\ngit reset\n\n\nHard resetting files is not actually the best way of handeling stuff and that's why there isn't a simpler way in git to do that.\n\n\nAfter reset you can checkout only a single file. Git reset can be a useful thing, but it is slightly more complex to use efficiently, so we will use it only to unstage bad files.\n\n\ngit add bad.file\ngit reset bad.file\n\n\n\n\n\n\n\nDemo\n\n\nRemove the erroreous staged file.\n\n\n\n\nYou can reset files even after commited if you haven't pushed yet. Talking baout htat later\n\n\ngit add bad.file\ngit commit -m \"Screwing myself up\"\ngit reset HEAD~1\ngit checkout .\n\n\n\n\n\n\n\nQuestion\n\n\nHow does git log looks like after reset?\n\n\n\n\nOr you can do --hard reset to revert to previous state\n\n\ngit add bad.file\ngit commit -m \"Totally a bad decision\"\ngit reset HEAD~1 --hard\n\n\n\n\n\n\n\nDemo\n\n\nAdd a mistake to bob file. Commit the mistake and then reset the project to previous stage. Show hard reset as well.\n\n\n\n\n\n\nPractice\n\n\nMake the error in bob file. Add and commit the file. Revert to previous commit.\n\n\n\n\ngit checkout\n\n\nNow we know we did something bad and we haven't commit anything yet, we can easily load past version of the file, with checkout. \n\n\n\n\nWarning\n\n\nGit checkout overwrites all changes done to the file without warning. If you want to keep some version, you need to either \ngit stash\n or \ngit branch\n\n\n\n\n    git checkout main.R\n\n\n\n\n\nAfter file is commited, checkout serves another purpose. It allows us to checkout the project at a certain timepoint.\n\n\n\n\nDemo\n\n\nMake some elaborate changes to the main.R. Add the change\n\n\n\n\n    git checkout 34hb56\n    git reset --hard \n\n\n\n\n\ngit rm\n\n\nRemoves file form HDD as well as git in the next stage. \n\n\n\n\n\n\n\n\n\n\nDemo\n\n\nCreate a file called bad.R. Add and commit it. Remove it in the next commit.\n\n\n\n\nIf you want to keep the file on HDD but remove it from git, you can do that as well\n\n\n    git rm --cached HIDDEN_FILE\n\n\n\n\n\n\n\nDemo\n\n\nCreate a HIDDEN_FILE file and commit it. Then realise your mistake and remove it but keep it on HDD. WARNING: this file will still show in ONLINE history, so beware what was in it before you purged it\n\n\n\n\nReseting strategies\n\n\nRule of thumb is, that if you pushed online, you should never revert back. If you are working on a local PC, you are finne and safe and can do whatever. Reset, reset hard, checkout ...\n\n\nIf you pushed online, there is another way\n\n\ngit revert\n\n\nGit revert creates a new commit that reverts the ast several. That way we are still continuing linearly\n\n\n    git add bad-life-decision.md\n    git commit -m \"Adds all the bad deccisions\"\n    git revert HEAD #reverts latest commit\n    git revert sha-commit #reverts particular commit\n\n\n\n\n\n\n\nDemo\n\n\nAdd a mistake to the bob ross file.\n\n\n\n\n\n\nPractice\n\n\nCreate two new lines in bob ross file. commit the changes. Revert the changes. take a look at the log.\n\n\nReset the repository to the state before you even added the files. \n\n\n\n\nConnecting to the internet\n\n\nMain rule - what is online is LAW! That is the best version of the project. If you want to revert mistakes, you can actually rewrite online version, but you should NEVER do that in collaborative processes.\n\n\n\n\nDemo\n\n\nShow how to setup new repository on github\n\n\n\n\n\n\nPractice\n\n\nGo to github/bitbucket or your preferred service and create a new empty repository. Don\u00a8t add annythign to the repository (no readme, licence, .gitignore etc.)\n\n\n\n\ngit remote\n\n\nRemote is factically a url pointing to an online repository where you can push your changes and kee it in sync with your local changes.\n\n\nDefault remote is called \norigin\n. You can change it but it is not recommended. Get used to it.\n\n\n    git remote add origin https://address.com/repository.git\n\n\n\n\n\nYou can have multiple remotes .. e.g. one for your private development and one for keeping track of a package you are using being developed. That is basically how forking works. We will get into that next time.\n\n\ngit push\n\n\nGit push pushes your .git repository online. \n\n\n\n\nPractice\n\n\nPush your current repository online\n\n\n\n\nANy push you are making wants to be linear, meaning that if you reverted to past version, you will not be able to push.\n\n\n\n\nPractice\n\n\nRevert your repository to one step back. Try to push. You can't. we will go about it in the next excercise\n\n\n\n\nExplain what is problem with reverting states.  \n\n\ngit pull\n\n\nPull does two things ... fetch and merge. We will talk about merge with branching, but if you have a single branch and linear history, you should be fie with pulls.\n\n\ngit pull\n\n\n\n\n\n\n\nPractice\n\n\nPull the repository that is now behind. You should now be at the tip of your current repository,\n\n\n\n\nFixing online errors\n\n\nNow it is time to understand the purpose of git revert. \n\n\n\n\nPractice\n\n\nMake a mistake in your file. Commit and push it. \n\n\nShit, you have a mistake in your file. Reset your repository to the previous state before the fuckup. Try to push, you can't.\n\n\n\n\ngit push -f\n\n\n\n\n\n\n\nWarning\n\n\nThis approach is possible if you are the only person working on a repo, but shoudl NEVER! be done in collaborative projects.\n\n\n\n\nSo if you should NEVER EVER DO THAT, how can you fix a messup? \ngit revert\n\n\n\n\nPractice\n\n\nMake the same mistake in your file. Commit and push it.\n\n\nNow make a revert commit for that particular commit. Push the result.\n\n\nMarvel\n\n\n\n\n.gititnore\n\n\nGit tracks every file inside your directory, but sometimes you don't want that. \n\n\nE.G unity creases Library/Temp folders, that you NEVER commit. Same for Matlab asc files, R .RHistory/.RData files etc. \n\n\nit would be bothersome to always look at those files as being untracked, so we cna remove them completely.\n\n\n    touch .gitnigore\n    vi .gitignore\n\n\n\n\n\nGithub has many gitignores ready for your projects \nHERE\n\n\n\n\nImportant\n\n\nremember you need to ADD and commit .gitignore so that this ignoring information carries accross PCs.\n\n\n\n\n\n\nDemo\n\n\nCreate a text file notes.txt. Put some stuff in and run \ngit status\n. We don't want it. create .gitignore. Now we are good. Clone the repo to a different folder and create notes.txt in that clones. We need to recreate the .gititnore. Show a better way. Add and commit .gitignore.",
+            "title": "Fundamentals"
+        },
+        {
+            "location": "/git/fundamentals/#what-is-git",
+            "text": "Git is the origin of google docs :) GIt is like game save with bunch of functionality aded on top.  git is a distributed version control system. Git keeps track of all the files and changes to those files.   Unlike other VCSs, git saves snapshots of history. Every time you make change to ANY file under git control, it knows about it.   Git is not running, it doesn\u00a8t drain resources. It only \"runs\" when you ask it to.  Git != github  Git is local - distributed. You can work on projeccts completely offline. It has its benefits and isadvantages, but for small teams, mostly benefits.",
+            "title": "What is git"
+        },
+        {
+            "location": "/git/fundamentals/#when-to-use-it",
+            "text": "Git works flawlessly with text based files, but cannot work (without serious tweaking) with binary files.   Example  Show an example what is the difference between text and png file   Git is designed to work as a repository for files you need to keep track of and you are developing constantly. It should NOT be used as a repository for your data files.   Question  Which of these files should be sourced and which not?   *.jpg  *.md  *.R  *.csv  *.edf",
+            "title": "When to use it?"
+        },
+        {
+            "location": "/git/fundamentals/#terminology",
+            "text": "Git != github.",
+            "title": "Terminology"
+        },
+        {
+            "location": "/git/fundamentals/#repository",
+            "text": "Or repo for short.",
+            "title": "Repository"
+        },
+        {
+            "location": "/git/fundamentals/#staging-and-commiting",
+            "text": "Process of adding files under version control. Staging prepares them for the commit, commiting adds them permantenly to the branch you are working on.   Stagin and commiting are separated becasue of practical reasons. You might need to stage multiple files before you want to commit to the commit.",
+            "title": "Staging and commiting"
+        },
+        {
+            "location": "/git/fundamentals/#branch",
+            "text": "Path of your project with the linear history. Points to the latest commit in a particular \"branch\".   Default branch is master.   Common names can be  develop ,  addingEEGLAB  etc.",
+            "title": "Branch"
+        },
+        {
+            "location": "/git/fundamentals/#remote",
+            "text": "Online repositoryy that keeps the .git folder with entire project in it.",
+            "title": "Remote"
+        },
+        {
+            "location": "/git/fundamentals/#git-software",
+            "text": "Git has several \"clickable\" GUIs.    Gitkraken  SourceTree   Problems with git gui:   unreliable from time to time  they don't always implement all the features (gitkraken implemented LFS in September 2017 and it is still in beta)  they don't teach you anything - in the beginnign you are missing on the underlying logic  MAJOR : All internet help will be cmd based. CMD commands are universal, GUIs are not",
+            "title": "Git software"
+        },
+        {
+            "location": "/git/fundamentals/#first-repository",
+            "text": "Demo  Before starting create a github repository for this lesson to showcase how it works and to be able to clone it back to pc. Set remotes. You will explain it later.",
+            "title": "First repository"
+        },
+        {
+            "location": "/git/fundamentals/#initialisation",
+            "text": "What is in the folder. What are we looking at?",
+            "title": "Initialisation"
+        },
+        {
+            "location": "/git/fundamentals/#git-init",
+            "text": "Demo  Run  git init  and take a look at the folder. Make sure people can see hidden files.",
+            "title": "git init"
+        },
+        {
+            "location": "/git/fundamentals/#writing-first-file",
+            "text": "Git files exist in several states:   untracked  tracked and unmodified  tracked and modified   Tracked modified files can be in two states: staged or unstaged.  let's make some changes and then see how it looks.",
+            "title": "Writing first file"
+        },
+        {
+            "location": "/git/fundamentals/#git-add",
+            "text": "touch README.md\n    touch main.R\n    vim README.md\n    git add README.md  Git add has several shorthands to add all files you have changed.      git add .\n    git add --all   Demo  Create README.md and main.R file. Add README to the stagin area.   now let's learn a seccond command",
+            "title": "git add"
+        },
+        {
+            "location": "/git/fundamentals/#git-status",
+            "text": "What happens if you add and then change again file before commit?  git status\ngit status -s   Demo  After staging README.md, make some modifications and then run git status again. What is weird. Explain what is going on with the readme. How can it be staged and modified??",
+            "title": "git status"
+        },
+        {
+            "location": "/git/fundamentals/#git-diff",
+            "text": "Git diff allows to compare what changed in what file in history  Different types of diffs  git diff #diffs all the files that are tracked\ngit diff path/to/file.R #diffs changes in that particular file\ngit diff 243a6 #diffs changes vs particular commit in history   \ngit diff path/to/file.R 24b3a6 #diffs changes of a file vs particular commit/branch",
+            "title": "git diff"
+        },
+        {
+            "location": "/git/fundamentals/#git-reset",
+            "text": "Git reset allows removing files from staged area. It doens't modify nor change the file, it only unstages it.  git reset Main.",
+            "title": "git reset"
+        },
+        {
+            "location": "/git/fundamentals/#git-commit",
+            "text": "When satisfied, you can commit those files you have to the repository. Each commit needs to have an author and message.  You might be asked to set user.email and user.name. Keep them same to your github/bitbucket accounts if you want the commits to be Yours.  git config --global user.email \"your@email.com\ngit config --global user.name \"yourname\"  When you are defined as a user, you can commit files.  git commit  Shorthand for commit with a message is  git commit -m \"Initial commit\"   Practice  Now make simple modifications to main.R to load bob ross paintings from  here  into variable called  df_bob .   Check status of your branch. Stage the file and commit it with some message. Do this several times. Always add and commit only one or two lines of code.",
+            "title": "git commit"
+        },
+        {
+            "location": "/git/fundamentals/#git-log",
+            "text": "After you have done these two commits, we can look at how our history looks   git log\ngit log -2\ngit log ---graph\ngit log -p -1\ngit log --pretty=online",
+            "title": "git log"
+        },
+        {
+            "location": "/git/fundamentals/#changing-files-and-our-mind",
+            "text": "Now we have few files, we can get into the core of git. but first, screw up our perfect bob ross loading   Practice  Make a purposeful mistake in the bob ross file so that it now doesn't load anything. DO NOT COMMIT!  Use git diff to see what exactly is now different. Stage the file.",
+            "title": "Changing files (and our mind)"
+        },
+        {
+            "location": "/git/fundamentals/#git-reset_1",
+            "text": "Hard resetting files is not actually the best way of handeling stuff and that's why there isn't a simpler way in git to do that.  After reset you can checkout only a single file. Git reset can be a useful thing, but it is slightly more complex to use efficiently, so we will use it only to unstage bad files.  git add bad.file\ngit reset bad.file   Demo  Remove the erroreous staged file.   You can reset files even after commited if you haven't pushed yet. Talking baout htat later  git add bad.file\ngit commit -m \"Screwing myself up\"\ngit reset HEAD~1\ngit checkout .   Question  How does git log looks like after reset?   Or you can do --hard reset to revert to previous state  git add bad.file\ngit commit -m \"Totally a bad decision\"\ngit reset HEAD~1 --hard   Demo  Add a mistake to bob file. Commit the mistake and then reset the project to previous stage. Show hard reset as well.    Practice  Make the error in bob file. Add and commit the file. Revert to previous commit.",
+            "title": "git reset"
+        },
+        {
+            "location": "/git/fundamentals/#git-checkout",
+            "text": "Now we know we did something bad and we haven't commit anything yet, we can easily load past version of the file, with checkout.    Warning  Git checkout overwrites all changes done to the file without warning. If you want to keep some version, you need to either  git stash  or  git branch       git checkout main.R  After file is commited, checkout serves another purpose. It allows us to checkout the project at a certain timepoint.   Demo  Make some elaborate changes to the main.R. Add the change       git checkout 34hb56\n    git reset --hard",
+            "title": "git checkout"
+        },
+        {
+            "location": "/git/fundamentals/#git-rm",
+            "text": "Removes file form HDD as well as git in the next stage.      Demo  Create a file called bad.R. Add and commit it. Remove it in the next commit.   If you want to keep the file on HDD but remove it from git, you can do that as well      git rm --cached HIDDEN_FILE   Demo  Create a HIDDEN_FILE file and commit it. Then realise your mistake and remove it but keep it on HDD. WARNING: this file will still show in ONLINE history, so beware what was in it before you purged it",
+            "title": "git rm"
+        },
+        {
+            "location": "/git/fundamentals/#reseting-strategies",
+            "text": "Rule of thumb is, that if you pushed online, you should never revert back. If you are working on a local PC, you are finne and safe and can do whatever. Reset, reset hard, checkout ...  If you pushed online, there is another way",
+            "title": "Reseting strategies"
+        },
+        {
+            "location": "/git/fundamentals/#git-revert",
+            "text": "Git revert creates a new commit that reverts the ast several. That way we are still continuing linearly      git add bad-life-decision.md\n    git commit -m \"Adds all the bad deccisions\"\n    git revert HEAD #reverts latest commit\n    git revert sha-commit #reverts particular commit   Demo  Add a mistake to the bob ross file.    Practice  Create two new lines in bob ross file. commit the changes. Revert the changes. take a look at the log.  Reset the repository to the state before you even added the files.",
+            "title": "git revert"
+        },
+        {
+            "location": "/git/fundamentals/#connecting-to-the-internet",
+            "text": "Main rule - what is online is LAW! That is the best version of the project. If you want to revert mistakes, you can actually rewrite online version, but you should NEVER do that in collaborative processes.   Demo  Show how to setup new repository on github    Practice  Go to github/bitbucket or your preferred service and create a new empty repository. Don\u00a8t add annythign to the repository (no readme, licence, .gitignore etc.)",
+            "title": "Connecting to the internet"
+        },
+        {
+            "location": "/git/fundamentals/#git-remote",
+            "text": "Remote is factically a url pointing to an online repository where you can push your changes and kee it in sync with your local changes.  Default remote is called  origin . You can change it but it is not recommended. Get used to it.      git remote add origin https://address.com/repository.git  You can have multiple remotes .. e.g. one for your private development and one for keeping track of a package you are using being developed. That is basically how forking works. We will get into that next time.",
+            "title": "git remote"
+        },
+        {
+            "location": "/git/fundamentals/#git-push",
+            "text": "Git push pushes your .git repository online.    Practice  Push your current repository online   ANy push you are making wants to be linear, meaning that if you reverted to past version, you will not be able to push.   Practice  Revert your repository to one step back. Try to push. You can't. we will go about it in the next excercise   Explain what is problem with reverting states.",
+            "title": "git push"
+        },
+        {
+            "location": "/git/fundamentals/#git-pull",
+            "text": "Pull does two things ... fetch and merge. We will talk about merge with branching, but if you have a single branch and linear history, you should be fie with pulls.  git pull   Practice  Pull the repository that is now behind. You should now be at the tip of your current repository,",
+            "title": "git pull"
+        },
+        {
+            "location": "/git/fundamentals/#fixing-online-errors",
+            "text": "Now it is time to understand the purpose of git revert.    Practice  Make a mistake in your file. Commit and push it.   Shit, you have a mistake in your file. Reset your repository to the previous state before the fuckup. Try to push, you can't.   git push -f   Warning  This approach is possible if you are the only person working on a repo, but shoudl NEVER! be done in collaborative projects.   So if you should NEVER EVER DO THAT, how can you fix a messup?  git revert   Practice  Make the same mistake in your file. Commit and push it.  Now make a revert commit for that particular commit. Push the result.  Marvel",
+            "title": "Fixing online errors"
+        },
+        {
+            "location": "/git/fundamentals/#gititnore",
+            "text": "Git tracks every file inside your directory, but sometimes you don't want that.   E.G unity creases Library/Temp folders, that you NEVER commit. Same for Matlab asc files, R .RHistory/.RData files etc.   it would be bothersome to always look at those files as being untracked, so we cna remove them completely.      touch .gitnigore\n    vi .gitignore  Github has many gitignores ready for your projects  HERE   Important  remember you need to ADD and commit .gitignore so that this ignoring information carries accross PCs.    Demo  Create a text file notes.txt. Put some stuff in and run  git status . We don't want it. create .gitignore. Now we are good. Clone the repo to a different folder and create notes.txt in that clones. We need to recreate the .gititnore. Show a better way. Add and commit .gitignore.",
+            "title": ".gititnore"
+        }
+    ]
+}

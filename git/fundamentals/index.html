@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Layouts for lessons taught at research coding sesssions">
+      
+      
+        <link rel="canonical" href="https://lab-code.github.io/git/fundamentals/">
+      
+      
+        <meta name="author" content="hejtmy">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+    
+    
+      
+        <title>Fundamentals - Coding lessons</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-a20f419c8e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="light-green" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://lab-code.github.io" title="Coding lessons" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Git Versioning
+                </span>
+              
+            
+            Fundamentals
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/lab-code/coding-lessons" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      lab-code/coding-lessons
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <div class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </div>
+    Coding lessons
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/lab-code/coding-lessons" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      lab-code/coding-lessons
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Git Versioning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Git Versioning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Fundamentals
+      </label>
+    
+    <a href="./" title="Fundamentals" class="md-nav__link md-nav__link--active">
+      Fundamentals
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-git" title="What is git" class="md-nav__link">
+    What is git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-it" title="When to use it?" class="md-nav__link">
+    When to use it?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminology" title="Terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repository" title="Repository" class="md-nav__link">
+    Repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-and-commiting" title="Staging and commiting" class="md-nav__link">
+    Staging and commiting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch" title="Branch" class="md-nav__link">
+    Branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote" title="Remote" class="md-nav__link">
+    Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-software" title="Git software" class="md-nav__link">
+    Git software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-repository" title="First repository" class="md-nav__link">
+    First repository
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" title="Initialisation" class="md-nav__link">
+    Initialisation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-init" title="git init" class="md-nav__link">
+    git init
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-first-file" title="Writing first file" class="md-nav__link">
+    Writing first file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-add" title="git add" class="md-nav__link">
+    git add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-status" title="git status" class="md-nav__link">
+    git status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff" title="git diff" class="md-nav__link">
+    git diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset" title="git reset" class="md-nav__link">
+    git reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" title="git commit" class="md-nav__link">
+    git commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log" title="git log" class="md-nav__link">
+    git log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-files-and-our-mind" title="Changing files (and our mind)" class="md-nav__link">
+    Changing files (and our mind)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-reset_1" title="git reset" class="md-nav__link">
+    git reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-checkout" title="git checkout" class="md-nav__link">
+    git checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" title="git rm" class="md-nav__link">
+    git rm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseting-strategies" title="Reseting strategies" class="md-nav__link">
+    Reseting strategies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-revert" title="git revert" class="md-nav__link">
+    git revert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-internet" title="Connecting to the internet" class="md-nav__link">
+    Connecting to the internet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-remote" title="git remote" class="md-nav__link">
+    git remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-push" title="git push" class="md-nav__link">
+    git push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-pull" title="git pull" class="md-nav__link">
+    git pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixing-online-errors" title="Fixing online errors" class="md-nav__link">
+    Fixing online errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gititnore" title=".gititnore" class="md-nav__link">
+    .gititnore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-git" title="What is git" class="md-nav__link">
+    What is git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-it" title="When to use it?" class="md-nav__link">
+    When to use it?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminology" title="Terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repository" title="Repository" class="md-nav__link">
+    Repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-and-commiting" title="Staging and commiting" class="md-nav__link">
+    Staging and commiting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch" title="Branch" class="md-nav__link">
+    Branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote" title="Remote" class="md-nav__link">
+    Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-software" title="Git software" class="md-nav__link">
+    Git software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-repository" title="First repository" class="md-nav__link">
+    First repository
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" title="Initialisation" class="md-nav__link">
+    Initialisation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-init" title="git init" class="md-nav__link">
+    git init
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-first-file" title="Writing first file" class="md-nav__link">
+    Writing first file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-add" title="git add" class="md-nav__link">
+    git add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-status" title="git status" class="md-nav__link">
+    git status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff" title="git diff" class="md-nav__link">
+    git diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset" title="git reset" class="md-nav__link">
+    git reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" title="git commit" class="md-nav__link">
+    git commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log" title="git log" class="md-nav__link">
+    git log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-files-and-our-mind" title="Changing files (and our mind)" class="md-nav__link">
+    Changing files (and our mind)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-reset_1" title="git reset" class="md-nav__link">
+    git reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-checkout" title="git checkout" class="md-nav__link">
+    git checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" title="git rm" class="md-nav__link">
+    git rm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseting-strategies" title="Reseting strategies" class="md-nav__link">
+    Reseting strategies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-revert" title="git revert" class="md-nav__link">
+    git revert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-internet" title="Connecting to the internet" class="md-nav__link">
+    Connecting to the internet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-remote" title="git remote" class="md-nav__link">
+    git remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-push" title="git push" class="md-nav__link">
+    git push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-pull" title="git pull" class="md-nav__link">
+    git pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixing-online-errors" title="Fixing online errors" class="md-nav__link">
+    Fixing online errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gititnore" title=".gititnore" class="md-nav__link">
+    .gititnore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Fundamentals</h1>
+                
+                <h2 id="what-is-git">What is git</h2>
+<p>Git is the origin of google docs :) GIt is like game save with bunch of functionality aded on top.</p>
+<p>git is a distributed version control system. Git keeps track of all the files and changes to those files. </p>
+<p>Unlike other VCSs, git saves snapshots of history. Every time you make change to ANY file under git control, it knows about it. </p>
+<p>Git is not running, it doesn¨t drain resources. It only "runs" when you ask it to.</p>
+<p>Git != github</p>
+<p>Git is local - distributed. You can work on projeccts completely offline. It has its benefits and isadvantages, but for small teams, mostly benefits.</p>
+<h2 id="when-to-use-it">When to use it?</h2>
+<p>Git works flawlessly with text based files, but cannot work (without serious tweaking) with binary files.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Show an example what is the difference between text and png file</p>
+</div>
+<p>Git is designed to work as a repository for files you need to keep track of and you are developing constantly. It should NOT be used as a repository for your data files.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Which of these files should be sourced and which not?</p>
+<ul>
+<li>*.jpg</li>
+<li>*.md</li>
+<li>*.R</li>
+<li>*.csv</li>
+<li>*.edf</li>
+</ul>
+</div>
+<h3 id="terminology">Terminology</h3>
+<p>Git != github.</p>
+<h4 id="repository">Repository</h4>
+<p>Or repo for short.</p>
+<h4 id="staging-and-commiting">Staging and commiting</h4>
+<p>Process of adding files under version control. Staging prepares them for the commit, commiting adds them permantenly to the branch you are working on.</p>
+<p><img alt="Git workflow" src="../../../assets/img/git-fundamentals/git-staging.png" /></p>
+<p>Stagin and commiting are separated becasue of practical reasons. You might need to stage multiple files before you want to commit to the commit.</p>
+<h4 id="branch">Branch</h4>
+<p>Path of your project with the linear history. Points to the latest commit in a particular "branch". </p>
+<p>Default branch is master. </p>
+<p>Common names can be <em>develop</em>, <em>addingEEGLAB</em> etc.</p>
+<h4 id="remote">Remote</h4>
+<p>Online repositoryy that keeps the .git folder with entire project in it.</p>
+<h2 id="git-software">Git software</h2>
+<p>Git has several "clickable" GUIs. </p>
+<ul>
+<li>Gitkraken</li>
+<li>SourceTree</li>
+</ul>
+<p>Problems with git gui:</p>
+<ul>
+<li>unreliable from time to time</li>
+<li>they don't always implement all the features (gitkraken implemented LFS in September 2017 and it is still in beta)</li>
+<li>they don't teach you anything - in the beginnign you are missing on the underlying logic</li>
+<li><strong>MAJOR</strong>: All internet help will be cmd based. CMD commands are universal, GUIs are not</li>
+</ul>
+<h2 id="first-repository">First repository</h2>
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Before starting create a github repository for this lesson to showcase how it works and to be able to clone it back to pc. Set remotes. You will explain it later.</p>
+</div>
+<h3 id="initialisation">Initialisation</h3>
+<p>What is in the folder. What are we looking at?</p>
+<h4 id="git-init">git init</h4>
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Run <code>git init</code> and take a look at the folder. Make sure people can see hidden files.</p>
+</div>
+<h3 id="writing-first-file">Writing first file</h3>
+<p>Git files exist in several states:</p>
+<ul>
+<li>untracked</li>
+<li>tracked and unmodified</li>
+<li>tracked and modified
+<img alt="Git workflow" src="../../../assets/img/git-fundamentals/git-workflow.png" /></li>
+</ul>
+<p>Tracked modified files can be in two states: staged or unstaged.</p>
+<p>let's make some changes and then see how it looks.</p>
+<h4 id="git-add">git add</h4>
+<div class="codehilite"><pre><span></span>    touch README.md
+    touch main.R
+    vim README.md
+    git add README.md
+</pre></div>
+
+
+<p>Git add has several shorthands to add all files you have changed.</p>
+<div class="codehilite"><pre><span></span>    git add .
+    git add --all
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Create README.md and main.R file. Add README to the stagin area.</p>
+</div>
+<p>now let's learn a seccond command</p>
+<h4 id="git-status">git status</h4>
+<p>What happens if you add and then change again file before commit?</p>
+<div class="codehilite"><pre><span></span>git status
+git status -s
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>After staging README.md, make some modifications and then run git status again. What is weird. Explain what is going on with the readme. How can it be staged and modified??</p>
+</div>
+<h4 id="git-diff">git diff</h4>
+<p>Git diff allows to compare what changed in what file in history</p>
+<p>Different types of diffs</p>
+<div class="codehilite"><pre><span></span>git diff #diffs all the files that are tracked
+git diff path/to/file.R #diffs changes in that particular file
+git diff 243a6 #diffs changes vs particular commit in history   
+git diff path/to/file.R 24b3a6 #diffs changes of a file vs particular commit/branch
+</pre></div>
+
+
+<h4 id="git-reset">git reset</h4>
+<p>Git reset allows removing files from staged area. It doens't modify nor change the file, it only unstages it.</p>
+<div class="codehilite"><pre><span></span>git reset Main.
+</pre></div>
+
+
+<h4 id="git-commit">git commit</h4>
+<p>When satisfied, you can commit those files you have to the repository. Each commit needs to have an author and message.</p>
+<p>You might be asked to set user.email and user.name. Keep them same to your github/bitbucket accounts if you want the commits to be Yours.</p>
+<div class="codehilite"><pre><span></span>git config --global user.email &quot;your@email.com
+git config --global user.name &quot;yourname&quot;
+</pre></div>
+
+
+<p>When you are defined as a user, you can commit files.</p>
+<div class="codehilite"><pre><span></span>git commit
+</pre></div>
+
+
+<p>Shorthand for commit with a message is</p>
+<div class="codehilite"><pre><span></span>git commit -m &quot;Initial commit&quot;
+</pre></div>
+
+
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Now make simple modifications to main.R to load bob ross paintings from <a href="https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv">here</a> into variable called <code>df_bob</code>. </p>
+<p>Check status of your branch. Stage the file and commit it with some message. Do this several times. Always add and commit only one or two lines of code.</p>
+</div>
+<h4 id="git-log">git log</h4>
+<p>After you have done these two commits, we can look at how our history looks </p>
+<div class="codehilite"><pre><span></span>git log
+git log -2
+git log ---graph
+git log -p -1
+git log --pretty=online
+</pre></div>
+
+
+<h3 id="changing-files-and-our-mind">Changing files (and our mind)</h3>
+<p>Now we have few files, we can get into the core of git. but first, screw up our perfect bob ross loading</p>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Make a purposeful mistake in the bob ross file so that it now doesn't load anything. DO NOT COMMIT!</p>
+<p>Use git diff to see what exactly is now different. Stage the file.</p>
+</div>
+<h4 id="git-reset_1">git reset</h4>
+<p>Hard resetting files is not actually the best way of handeling stuff and that's why there isn't a simpler way in git to do that.</p>
+<p>After reset you can checkout only a single file. Git reset can be a useful thing, but it is slightly more complex to use efficiently, so we will use it only to unstage bad files.</p>
+<div class="codehilite"><pre><span></span>git add bad.file
+git reset bad.file
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Remove the erroreous staged file.</p>
+</div>
+<p>You can reset files even after commited if you haven't pushed yet. Talking baout htat later</p>
+<div class="codehilite"><pre><span></span>git add bad.file
+git commit -m &quot;Screwing myself up&quot;
+git reset HEAD~1
+git checkout .
+</pre></div>
+
+
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>How does git log looks like after reset?</p>
+</div>
+<p>Or you can do --hard reset to revert to previous state</p>
+<div class="codehilite"><pre><span></span>git add bad.file
+git commit -m &quot;Totally a bad decision&quot;
+git reset HEAD~1 --hard
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Add a mistake to bob file. Commit the mistake and then reset the project to previous stage. Show hard reset as well.</p>
+</div>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Make the error in bob file. Add and commit the file. Revert to previous commit.</p>
+</div>
+<h4 id="git-checkout">git checkout</h4>
+<p>Now we know we did something bad and we haven't commit anything yet, we can easily load past version of the file, with checkout. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Git checkout overwrites all changes done to the file without warning. If you want to keep some version, you need to either <code>git stash</code> or <code>git branch</code></p>
+</div>
+<div class="codehilite"><pre><span></span>    git checkout main.R
+</pre></div>
+
+
+<p>After file is commited, checkout serves another purpose. It allows us to checkout the project at a certain timepoint.</p>
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Make some elaborate changes to the main.R. Add the change</p>
+</div>
+<div class="codehilite"><pre><span></span>    git checkout 34hb56
+    git reset --hard 
+</pre></div>
+
+
+<h4 id="git-rm">git rm</h4>
+<p>Removes file form HDD as well as git in the next stage. </p>
+<div class="codehilite"><pre><span></span>
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Create a file called bad.R. Add and commit it. Remove it in the next commit.</p>
+</div>
+<p>If you want to keep the file on HDD but remove it from git, you can do that as well</p>
+<div class="codehilite"><pre><span></span>    git rm --cached HIDDEN_FILE
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Create a HIDDEN_FILE file and commit it. Then realise your mistake and remove it but keep it on HDD. WARNING: this file will still show in ONLINE history, so beware what was in it before you purged it</p>
+</div>
+<h3 id="reseting-strategies">Reseting strategies</h3>
+<p>Rule of thumb is, that if you pushed online, you should never revert back. If you are working on a local PC, you are finne and safe and can do whatever. Reset, reset hard, checkout ...</p>
+<p>If you pushed online, there is another way</p>
+<h4 id="git-revert">git revert</h4>
+<p>Git revert creates a new commit that reverts the ast several. That way we are still continuing linearly</p>
+<div class="codehilite"><pre><span></span>    git add bad-life-decision.md
+    git commit -m &quot;Adds all the bad deccisions&quot;
+    git revert HEAD #reverts latest commit
+    git revert sha-commit #reverts particular commit
+</pre></div>
+
+
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Add a mistake to the bob ross file.</p>
+</div>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Create two new lines in bob ross file. commit the changes. Revert the changes. take a look at the log.</p>
+<p>Reset the repository to the state before you even added the files. </p>
+</div>
+<h3 id="connecting-to-the-internet">Connecting to the internet</h3>
+<p>Main rule - what is online is LAW! That is the best version of the project. If you want to revert mistakes, you can actually rewrite online version, but you should NEVER do that in collaborative processes.</p>
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Show how to setup new repository on github</p>
+</div>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Go to github/bitbucket or your preferred service and create a new empty repository. Don¨t add annythign to the repository (no readme, licence, .gitignore etc.)</p>
+</div>
+<h4 id="git-remote">git remote</h4>
+<p>Remote is factically a url pointing to an online repository where you can push your changes and kee it in sync with your local changes.</p>
+<p>Default remote is called <code>origin</code>. You can change it but it is not recommended. Get used to it.</p>
+<div class="codehilite"><pre><span></span>    git remote add origin https://address.com/repository.git
+</pre></div>
+
+
+<p>You can have multiple remotes .. e.g. one for your private development and one for keeping track of a package you are using being developed. That is basically how forking works. We will get into that next time.</p>
+<h4 id="git-push">git push</h4>
+<p>Git push pushes your .git repository online. </p>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Push your current repository online</p>
+</div>
+<p>ANy push you are making wants to be linear, meaning that if you reverted to past version, you will not be able to push.</p>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Revert your repository to one step back. Try to push. You can't. we will go about it in the next excercise</p>
+</div>
+<p>Explain what is problem with reverting states.  </p>
+<h4 id="git-pull">git pull</h4>
+<p>Pull does two things ... fetch and merge. We will talk about merge with branching, but if you have a single branch and linear history, you should be fie with pulls.</p>
+<div class="codehilite"><pre><span></span>git pull
+</pre></div>
+
+
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Pull the repository that is now behind. You should now be at the tip of your current repository,</p>
+</div>
+<h4 id="fixing-online-errors">Fixing online errors</h4>
+<p>Now it is time to understand the purpose of git revert. </p>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Make a mistake in your file. Commit and push it. </p>
+<p>Shit, you have a mistake in your file. Reset your repository to the previous state before the fuckup. Try to push, you can't.</p>
+</div>
+<div class="codehilite"><pre><span></span>git push -f
+</pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This approach is possible if you are the only person working on a repo, but shoudl NEVER! be done in collaborative projects.</p>
+</div>
+<p>So if you should NEVER EVER DO THAT, how can you fix a messup? <code>git revert</code></p>
+<div class="admonition practice">
+<p class="admonition-title">Practice</p>
+<p>Make the same mistake in your file. Commit and push it.</p>
+<p>Now make a revert commit for that particular commit. Push the result.</p>
+<p>Marvel</p>
+</div>
+<h4 id="gititnore">.gititnore</h4>
+<p>Git tracks every file inside your directory, but sometimes you don't want that. </p>
+<p>E.G unity creases Library/Temp folders, that you NEVER commit. Same for Matlab asc files, R .RHistory/.RData files etc. </p>
+<p>it would be bothersome to always look at those files as being untracked, so we cna remove them completely.</p>
+<div class="codehilite"><pre><span></span>    touch .gitnigore
+    vi .gitignore
+</pre></div>
+
+
+<p>Github has many gitignores ready for your projects <a href="https://github.com/github/gitignore">HERE</a></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>remember you need to ADD and commit .gitignore so that this ignoring information carries accross PCs.</p>
+</div>
+<div class="admonition demo">
+<p class="admonition-title">Demo</p>
+<p>Create a text file notes.txt. Put some stuff in and run <code>git status</code>. We don't want it. create .gitignore. Now we are good. Clone the repo to a different folder and create notes.txt in that clones. We need to recreate the .gititnore. Show a better way. Add and commit .gitignore.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-f3ab9e5ff8.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
