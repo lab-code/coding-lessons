@@ -45,7 +45,15 @@ Process of adding files under version control. Staging prepares them for the com
 Stagin and commiting are separated becasue of practical reasons. You might need to stage multiple files before you want to commit to the commit.
 
 #### Branch
-Path of your project with the linear history - also calledd working tree.
+Path of your project with the linear history. Points to the latest commit in a particular "branch". 
+
+Default branch is master. 
+
+Common names can be *develop*, *addingEEGLAB* etc.
+
+#### Remote
+
+Online repositoryy that keeps the .git folder with entire project in it.
 
 ## Git software
 
@@ -101,7 +109,7 @@ Git add has several shorthands to add all files you have changed.
 ```
 
 !!! Demo
-    Create README.md and main.R file
+    Create README.md and main.R file. Add README to the stagin area.
 
 now let's learn a seccond command
 #### git status
@@ -132,8 +140,7 @@ Different types of diffs
 #### git reset
 Git reset allows removing files from staged area. It doens't modify nor change the file, it only unstages it.
 ```
-    git reset Main.
-
+git reset Main.
 ```
 
 #### git commit
@@ -157,9 +164,11 @@ git commit -m "Initial commit"
 ```
 
 !!! Practice
-    Now make simple modifications to Main.R to load bob ross paintings from [here](https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv) into variable called `df_bob`. 
+    Now make simple modifications to main.R to load bob ross paintings from [here](https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv) into variable called `df_bob`. 
     
-    Check status of your branch. Stage the file and commit it with some message.
+    Check status of your branch. Stage the file and commit it with some message. Do this several times. Always add and commit only one or two lines of code.
+
+
 
 #### git log
 
@@ -177,31 +186,76 @@ git log --pretty=online
 
 Now we have few files, we can get into the core of git. but first, screw up our perfect bob ross loading
 
-!!! Task
+!!! Practice
     Make a purposeful mistake in the bob ross file so that it now doesn't load anything. DO NOT COMMIT!
 
+    Use git diff to see what exactly is now different. Stage the file.
+
+#### git reset
+Hard resetting files is not actually the best way of handeling stuff and that's why there isn't a simpler way in git to do that.
+
+After reset you can checkout only a single file. Git reset can be a useful thing, but it is slightly more complex to use efficiently, so we will use it only to unstage bad files.
+
+```
+    git add bad.file
+    git reset bad.file
+```
+
+!!! Demo 
+    Remove the erroreous staged file.
+
+You can reset files even after commited if you haven't pushed yet. Talking baout htat later
+
+``` 
+    git add bad.file
+    git commit -m "Screwing myself up"
+    git reset HEAD~1
+    git checkout .
+```
+
+
+!!! Question
+    How does git log looks like after reset?
+
+Or you can do --hard reset to revert to previous state
+
+``` 
+    git add bad.file
+    git commit -m "Totally a bad decision"
+    git reset HEAD~1 --hard
+```
+
+!!! DEMO
+    Add a mistake to bob file. Commit the mistake and then reset the project to previous stage. Show hard reset as well.
+
 !!! Practice
-    Use git diff to see what exactly is now different.
+    Make the error in bob file. Add and commit the file. Revert to previous commit.
+
 
 #### git checkout
 Now we know we did something bad and we haven't commit anything yet, we can easily load past version of the file, with checkout. 
 
 !!! WARNING
-    Git checkout overwrites all changes done to the file. If you want to keep some version, you need to either `git stash` or `git branch`
+    Git checkout overwrites all changes done to the file without warning. If you want to keep some version, you need to either `git stash` or `git branch`
 
 ```
-    git checkout Main.R
+    git checkout main.R
 ```
 
-#### git reset
-Hard resetting files is not actually the best way of handeling stuff and that's why there isn't a simpler way in git to do that.
+After file is commited, checkout serves another purpose. It allows us to checkout the project at a certain timepoint.
 
-After reset you can checkout only a single file. 
+!!! DEMO
+    Make some elaborate changes to the main.R. Add the change
+
+```
+    git checkout 34hb56
+    git reset --hard 
+```
 
 #### git rm
 Removes file form HDD as well as git in the next stage. 
-
 ``` 
+
 ```
 
 !!! Demo
@@ -217,24 +271,90 @@ If you want to keep the file on HDD but remove it from git, you can do that as w
     Create a HIDDEN_FILE file and commit it. Then realise your mistake and remove it but keep it on HDD. WARNING: this file will still show in ONLINE history, so beware what was in it before you purged it
 
 ### Reseting strategies
+Rule of thumb is, that if you pushed online, you should never revert back. If you are working on a local PC, you are finne and safe and can do whatever. Reset, reset hard, checkout ...
 
-#### Git
+If you pushed online, there is another way
+
+#### git revert
+Git revert creates a new commit that reverts the ast several. That way we are still continuing linearly
+
+``` 
+    git add bad-life-decision.md
+    git commit -m "Adds all the bad deccisions"
+    git revert HEAD #reverts latest commit
+    git revert sha-commit #reverts particular commit
+```
+
+!!! Demo
+    Add a mistake to the bob ross file.
+
+!!! Practice
+    Create two new lines in bob ross file. commit the changes. Revert the changes. take a look at the log.
+
+    Reset the repository to the state before you even added the files. 
 
 ### Connecting to the internet
 
 Main rule - what is online is LAW! That is the best version of the project. If you want to revert mistakes, you can actually rewrite online version, but you should NEVER do that in collaborative processes.
 
 #### git remote
-Multiple remotes?
+Remote is factically a url pointing to an online repository where you can push your changes and kee it in sync with your local changes.
+
+Default remote is called `origin`. You can change it but it is not recommended. Get used to it.
+
+```
+    git remote add origin https://address.com/repository.git
+```
+
+You can have multiple remotes .. e.g. one for your private development and one for keeping track of a package you are using being developed. That is basically how forking works. We will get into that next time.
 
 #### git push
 
-!!! Warning
-    Pushing reverted
+Git push pushes your .git repository online. 
 
-#### git fetch
+!!! Practice
+    Push your current repository online
 
+
+ANy push you are making wants to be linear, meaning that if you reverted to past version, you will not be able to push.
+
+!!! Practice
+    Revert your repository to one step back. Try to push. You can't. we will go about it in the next excercise
+
+Explain what is problem with reverting states.  
 #### git pull
+Pull does two things ... fetch and merge. We will talk about merge with branching, but if you have a single branch and linear history, you should be fie with pulls.
+
+```
+git pull
+```
+
+!!! Practice
+    Pull the repository that is now behind. You should now be at the tip of your current repository,
+
+
+#### Fixing online errors 
+Now it is time to understand the purpose of git revert. 
+
+!!! Practice
+    Make a mistake in your file. Commit and push it. 
+
+    Shit, you have a mistake in your file. Reset your repository to the previous state before the fuckup. Try to push, you can't.
+
+``` 
+git push -f
+```
+!!! Warning
+    This approach is possible if you are the only person working on a repo, but shoudl NEVER! be done in collaborative projects.
+
+So if you should NEVER EVER DO THAT, how can you fix a messup? `git revert`
+
+!!! Practice
+    Make the same mistake in your file. Commit and push it.
+
+    Now make a revert commit for that particular commit. Push the result.
+
+    Marvel
 
 #### .gititnore
 Git tracks every file inside your directory, but sometimes you don't want that. 
