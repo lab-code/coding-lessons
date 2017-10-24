@@ -117,8 +117,8 @@ now let's learn a seccond command
 What happens if you add and then change again file before commit?
 
 ``` 
-    git status
-    git status -s
+git status
+git status -s
 ```
 
 !!! Demo
@@ -131,10 +131,10 @@ Git diff allows to compare what changed in what file in history
 
 Different types of diffs
 ```
-    git diff #diffs all the files that are tracked
-    git diff path/to/file.R #diffs changes in that particular file
-    git diff 243a6 #diffs changes vs particular commit in history   
-    git diff path/to/file.R 24b3a6 #diffs changes of a file vs particular commit/branch
+git diff #diffs all the files that are tracked
+git diff path/to/file.R #diffs changes in that particular file
+git diff 243a6 #diffs changes vs particular commit in history   
+git diff path/to/file.R 24b3a6 #diffs changes of a file vs particular commit/branch
 ```
 
 #### git reset
@@ -197,8 +197,8 @@ Hard resetting files is not actually the best way of handeling stuff and that's 
 After reset you can checkout only a single file. Git reset can be a useful thing, but it is slightly more complex to use efficiently, so we will use it only to unstage bad files.
 
 ```
-    git add bad.file
-    git reset bad.file
+git add bad.file
+git reset bad.file
 ```
 
 !!! Demo 
@@ -207,10 +207,10 @@ After reset you can checkout only a single file. Git reset can be a useful thing
 You can reset files even after commited if you haven't pushed yet. Talking baout htat later
 
 ``` 
-    git add bad.file
-    git commit -m "Screwing myself up"
-    git reset HEAD~1
-    git checkout .
+git add bad.file
+git commit -m "Screwing myself up"
+git reset HEAD~1
+git checkout .
 ```
 
 
@@ -220,9 +220,9 @@ You can reset files even after commited if you haven't pushed yet. Talking baout
 Or you can do --hard reset to revert to previous state
 
 ``` 
-    git add bad.file
-    git commit -m "Totally a bad decision"
-    git reset HEAD~1 --hard
+git add bad.file
+git commit -m "Totally a bad decision"
+git reset HEAD~1 --hard
 ```
 
 !!! DEMO
@@ -296,6 +296,12 @@ Git revert creates a new commit that reverts the ast several. That way we are st
 ### Connecting to the internet
 
 Main rule - what is online is LAW! That is the best version of the project. If you want to revert mistakes, you can actually rewrite online version, but you should NEVER do that in collaborative processes.
+
+!!! Demo
+    Show how to setup new repository on github
+
+!!! Practice 
+    Go to github/bitbucket or your preferred service and create a new empty repository. Don¨t add annythign to the repository (no readme, licence, .gitignore etc.)
 
 #### git remote
 Remote is factically a url pointing to an online repository where you can push your changes and kee it in sync with your local changes.
@@ -376,23 +382,4 @@ Github has many gitignores ready for your projects [HERE](https://github.com/git
 !!! Demo
     Create a text file notes.txt. Put some stuff in and run `git status`. We don't want it. create .gitignore. Now we are good. Clone the repo to a different folder and create notes.txt in that clones. We need to recreate the .gititnore. Show a better way. Add and commit .gitignore.
 
-
-### Git trees
-
-#### git branch
-
-#### git merge
-
-mergin local branchs
-
-merging remotes
-
-### Cleaning up
-
-#### git rm --cached <file>
-
-
-`git clean`
-`git fetch --prune`
-`git branch -d -D`
 

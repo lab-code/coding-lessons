@@ -1,4 +1,27 @@
+
+
+### Git trees
+
+#### git branch
 git checkout -b old-state 0d1d7fc32
+
+
+branches can also be initialsed from past 
+#### git merge
+
+mergin local branchs
+
+merging remotes
+
+### Cleaning up
+
+#### git rm --cached <file>
+
+`git clean`
+`git fetch --prune`
+`git branch -d -D`
+
+¨
 
 ##git stash
 
